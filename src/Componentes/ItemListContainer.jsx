@@ -1,7 +1,7 @@
 import React from 'react';
-import './Item1stContainer.css'
+import './ItemListContainer.css'
 
-const Item1stContainer = ({titulo}) => {
+const ItemListContainer = ({titulo}) => {
     return (
         <div>
             <h1>{titulo}</h1>
@@ -9,4 +9,4 @@ const Item1stContainer = ({titulo}) => {
     );
 }
 
-export default Item1stContainer;
+export default ItemListContainer;
