@@ -1,14 +1,21 @@
 import React from 'react';
 import Contador from './Contador.jsx'; 
+import './itemDetail.css'
 
 const ItemDetail = ({item}) => {
     return (
-        <div>
+        <div >
             <h1>{item.name}</h1>
-            <img src= {item.img} alt={item.name}/>
-            <p>{item.description}</p>
-            <p>{item.price}</p>
-            <Contador initial={1} stock ={10}/>
+            <div className="card-detail">
+                <div className = "card-detail-left">
+                    <img src= {item.img} alt={item.name}/>
+                </div>
+                <div className="card-detail-right">
+                    <p>{item.description}</p>
+                    <p>{item.price}</p>
+                    <Contador initial={1} stock ={10}/>
+                </div>
+            </div>
         </div>
     );
 }
