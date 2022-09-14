@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './NavBar';
 import ItemListContainer from './ItemListContainer';
 import ProductosListContainer from './ProductosListContainer';
+import ItemDetailContainer from './ItemDetailContainer.jsx'
 
 const App = () => {
     return (
@@ -11,6 +12,7 @@ const App = () => {
             <NavBar/>
             <ItemListContainer titulo="Todo lo que necesitas en tu cocina, en una sola pagina."/> 
             <ProductosListContainer/>
+            <ItemDetailContainer/>
         </div>
     );
 }
