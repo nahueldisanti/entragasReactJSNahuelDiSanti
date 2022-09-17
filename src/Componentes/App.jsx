@@ -1,18 +1,24 @@
 import React from 'react';
 import './App.css';
-import NavBar from './NavBar';
-import ItemListContainer from './ItemListContainer';
-import ProductosListContainer from './ProductosListContainer';
-import ItemDetailContainer from './ItemDetailContainer.jsx'
+import NavBar from './NavBar/NavBar.jsx';
+import ProductosListContainer from './Productos/ProductosListContainer.jsx';
+import ItemDetailContainer from './ItemDetail/ItemDetailContainer.jsx'
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+
 
 const App = () => {
     return (
         <div>
             <h1>ALTA LLAMA</h1>
-            <NavBar/>
-            <ItemListContainer titulo="Todo lo que necesitas en tu cocina, en una sola pagina."/> 
-            <ProductosListContainer/>
-            <ItemDetailContainer/>
+            <BrowserRouter>
+                <NavBar/>
+                <Routes>
+                    <Route path='/' element={<ProductosListContainer/>}></Route>
+                    <Route path="/detalles/:id" element={<ItemDetailContainer/>}></Route>
+                    <Route path='/categoria/:categoria' element={<ProductosListContainer/>}></Route>
+                    <Route path="*" element={<h1>Error 404</h1>}></Route>
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }

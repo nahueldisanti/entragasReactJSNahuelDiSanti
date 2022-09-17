@@ -34,6 +34,24 @@ const produdata = [
         name: "Olla hierro fundido",
         price: 12500,
         srock: 5
+    },
+    {
+        id: 5,
+        category: "Equipamiento",
+        description: "Horno industrial con 6 hornallas, mechero para plancheta y horno con ladrillos refractarios.",
+        img: "https://http2.mlstatic.com/D_NQ_NP_945444-MLA45370523370_032021-O.webp",
+        name: "Cocina-Horno industrial.",
+        price: 154000,
+        srock: 2
+    },
+    {
+        id: 6,
+        category: "Equipamiento",
+        description: "Freezer vertical con 7 estantes NO froast",
+        img: "https://http2.mlstatic.com/D_NQ_NP_945444-MLA45370523370_032021-O.webp",
+        name: "Freezer vertical",
+        price: 120000,
+        srock: 3
     }
 ];
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Contador from './Contador.jsx'; 
+import Contador from '../Contador/Contador.jsx'; 
 import './itemDetail.css'
 
 const ItemDetail = ({item}) => {

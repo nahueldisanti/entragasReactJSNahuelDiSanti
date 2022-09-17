@@ -1,6 +1,8 @@
 import React from 'react';
 import './ItemListContainer.css'
-import Contador from './Contador.jsx'
+import Contador from './Contador.jsx.js'
+
+
 
 const ItemListContainer = ({titulo}) => {
 
@@ -13,7 +15,6 @@ const ItemListContainer = ({titulo}) => {
     return (
         <div>
             <h1>{titulo}</h1>
-            <Contador initial={1} stock ={10} onAdd={onAdd} />
         </div>
     );
 }
