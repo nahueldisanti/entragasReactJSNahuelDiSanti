@@ -12,8 +12,8 @@ const ItemDetail = ({item}) => {
                 </div>
                 <div className="card-detail-right">
                     <p>{item.description}</p>
-                    <p>{item.price}</p>
-                    <Contador initial={1} stock ={10}/>
+                    <p>${item.price}</p>
+                    <Contador producto={item}/>
                 </div>
             </div>
         </div>
