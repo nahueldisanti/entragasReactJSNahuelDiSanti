@@ -1,9 +1,11 @@
 import {React, useState} from 'react';
 import {Link} from 'react-router-dom';
+import { useCartContext } from '../../context/CartContext.js';
 
 const Contador = ({producto}) => {
 
     const [count, setCount] = useState(1);
+    const { agregarItem } = useCartContext()
 
     function sumar(){
         if (count < producto.stock){
@@ -16,8 +18,8 @@ const Contador = ({producto}) => {
         }}
 
     function agregarAlCarrito(producto) {
-        const productoCarrito = {id: producto.id, cantidad: count};
-        console.log(productoCarrito);
+        const productoCarrito = {...producto, cantidad: count};
+        agregarItem(productoCarrito)
     }
 
     return (
