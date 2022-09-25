@@ -1,13 +1,21 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './CartWidget.css'
 import {Link} from 'react-router-dom'
+import { CartContext } from '../../context/CartContext';
+
+
 const CartWidget = () => {
+
+    const {cantidadItems} = useContext(CartContext)
+    
     return (
-        <div>
-            <button type="button" className="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-            <i className="fa-solid fa-cart-shopping"></i>
-            </button>
-        </div>
+        <>
+            <Link to='/cart'>
+                {
+                    cantidadItems()>0&&<button>{cantidadItems()}</button>
+                }
+            </Link>
+        </>
     );
 }
 

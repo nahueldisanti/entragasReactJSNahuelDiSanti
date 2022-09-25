@@ -11,22 +11,19 @@ export const CartProvider = ({children}) => {
 
     const agregarItem = (itemAgregar) => {
 
-        let itemCantidad = {itemAgregar, cantidad: itemAgregar.cantidad};
-
         const itemEncontrado = carrito.find(
             (item) => item.id === itemAgregar.id
         )
-        console.log(itemEncontrado)
         if (itemEncontrado) {
-            itemCantidad = {itemAgregar, cantidad:itemEncontrado.cantidad + itemAgregar.cantidad};
-            setCarrito(...carrito, itemCantidad)
-        
+                itemEncontrado.cantidad += itemAgregar.cantidad
+                setCarrito([...carrito]);
         }else {
-            setCarrito([...carrito], itemCantidad);
-        }
+            setCarrito([...carrito, itemAgregar]);
 
+        }
+        console.log(carrito)
     }
-    
+
     const resetearCarrito = () => {
         setCarrito([]);
     };
@@ -35,11 +32,17 @@ export const CartProvider = ({children}) => {
         setCarrito( carrito.filter((item) => item.id !== id));
     };
 
+    const cantidadItems = () => {
+        let cantidad = 0
+        carrito.forEach((item) => cantidad += item.cantidad)
+        return cantidad
+    }
+
 
     return (
 
         <>
-            <CartContext.Provider value={{carrito, resetearCarrito, agregarItem, borrarItem}}>{children}</CartContext.Provider>
+            <CartContext.Provider value={{carrito, resetearCarrito, agregarItem, borrarItem, cantidadItems}}>{children}</CartContext.Provider>
         </>
     );
 }

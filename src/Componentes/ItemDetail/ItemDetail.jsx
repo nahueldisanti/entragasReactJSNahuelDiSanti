@@ -15,6 +15,9 @@ const ItemDetail = ({item}) => {
                     <p>${item.price}</p>
                     <Contador producto={item}/>
                 </div>
+                <div>
+                    
+                </div>
             </div>
         </div>
     );

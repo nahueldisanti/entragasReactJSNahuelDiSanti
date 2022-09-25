@@ -15,7 +15,6 @@ const Productos = ({producto}) => {
                 <Link to={`/detalles/${producto.id}`}>
                 <button className='button button-detail'>Ver Mas Info</button>
                 </Link>
-
             </div>
         </div>
     );

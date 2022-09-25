@@ -4,7 +4,7 @@ import { useCartContext } from '../../context/CartContext.js';
 
 const Contador = ({producto}) => {
 
-    const [count, setCount] = useState(1);
+    const [count, setCount] = useState(0);
     const { agregarItem } = useCartContext()
 
     function sumar(){
@@ -21,6 +21,7 @@ const Contador = ({producto}) => {
         const productoCarrito = {...producto, cantidad: count};
         agregarItem(productoCarrito)
     }
+
 
     return (
 
@@ -39,6 +40,8 @@ const Contador = ({producto}) => {
                             <button disabled={count===0} className="btn btn-warning" onClick={() => agregarAlCarrito(producto)}>Agergar al carrito</button>
                         </Link>
                     </div>
+                    {count>0&& <Link to="/cart" className='btn btn_item_count'>Finalizar Compra</Link>}
+
                 </div>
             </div>
     );
