@@ -2,18 +2,18 @@ import React from 'react';
 import Contador from '../Contador/Contador.jsx'; 
 import './itemDetail.css'
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({selectedItem}) => {
     return (
         <div >
-            <h1>{item.name}</h1>
+            <h1>{selectedItem.name}</h1>
             <div className="card-detail">
                 <div className = "card-detail-left">
-                    <img src= {item.img} alt={item.name}/>
+                    <img src= {selectedItem.img} alt={selectedItem.name}/>
                 </div>
                 <div className="card-detail-right">
-                    <p>{item.description}</p>
-                    <p>${item.price}</p>
-                    <Contador producto={item}/>
+                    <p>{selectedItem.description}</p>
+                    <p>${selectedItem.price}</p>
+                    <Contador producto={selectedItem}/>
                 </div>
                 <div>
                     

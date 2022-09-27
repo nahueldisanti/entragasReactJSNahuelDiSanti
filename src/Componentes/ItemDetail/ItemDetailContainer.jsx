@@ -1,26 +1,40 @@
 import {React, useState, useEffect} from 'react';
-import produdata from '../../data/productosdata.js';
 import ItemDetail from './ItemDetail.jsx';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { getDoc, doc } from 'firebase/firestore';
+import db from "../../Servicios/Firebase.js"
 
 const ItemDetailContainer = () => {
 
-    const {id} = useParams()
+    const { id } = useParams();
+    const [selectedItem, setSelectedItem] = useState([]);
 
-    const [item, setItem] = useState({})
+    const getDetail = async(idItem) => {
+        try{
+            const document = doc(db, 'productos', idItem)
+            const response = await getDoc(document)
+            const result = {id: response.id, ...response.data()}
+            console.log(result)
 
-    const getDetail = () => new Promise ((res, rej) => {
-        setTimeout(() => res(produdata.find(producto => producto.id === Number(id))), 2000)
-    })
+            setSelectedItem(result)
+            console.log(selectedItem)
+
+            console.log(result)
+        } catch(error) {
+            console.log(error)
+        }
+    }
+
 
     useEffect(() => {
-        getDetail()
-        .then(respuesta => setItem(respuesta))
-    }, [])
+        getDetail(id)
+    }, [id])
+
+
 
     return (
         <>
-            <ItemDetail item={item}/>
+            <ItemDetail item={selectedItem}/>
         </>
     );
 }
