@@ -17,6 +17,11 @@ const CartView = () => {
                             {carrito.map((producto) => <CartItem key={producto.id} item={producto}/>)}
                         </div>
                         <button className="btn btn-danger" onClick={resetearCarrito}>Vaciar Carrito</button>
+                        <Link to='/checkout'>
+                            <button className='btn-info'>
+                                Finalizar Compra
+                            </button>
+                        </Link>
                     </div>
                 ) : (
                     <div>

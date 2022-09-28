@@ -14,14 +14,9 @@ const ItemDetailContainer = () => {
             const document = doc(db, 'productos', idItem)
             const response = await getDoc(document)
             const result = {id: response.id, ...response.data()}
-            console.log(result)
-
             setSelectedItem(result)
-            console.log(selectedItem)
-
-            console.log(result)
         } catch(error) {
-            console.log(error)
+
         }
     }
 
@@ -34,7 +29,7 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            <ItemDetail item={selectedItem}/>
+            <ItemDetail selectedItem={selectedItem}/>
         </>
     );
 }
