@@ -3,9 +3,11 @@ import Productos from './Productos';
 
 const ProductosList = ({list}) => {
     return (
-        <ul>
-            {list.map( (producto) => <li key={producto.id}><Productos producto={producto}/></li>)}
-        </ul>
+        <div className='row'>
+            <div className=' justify-content-evenly'>
+                {list.map( (producto) => <Productos key={producto.id} producto={producto}/>)}
+            </div>
+        </div>
     );
 }
 

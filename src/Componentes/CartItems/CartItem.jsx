@@ -17,7 +17,7 @@ const CartItem = ({item}) => {
                         <div className='card-body'>
                             <h5 className='card-title'>{item.name}</h5>
                             <p className='card-text'>Cantidad agregada al carrito: {item.cantidad}</p>
-                            <p className='card-text'>Precio: {item.price}</p>
+                            <p className='card-text'>Precio total: ${item.price}</p>
                             <button className='btn btn-warning' onClick={()=>borrarItem(item.id)}>Eliminar Producto</button>
                         </div>
                     </div>

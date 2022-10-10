@@ -19,7 +19,6 @@ const ProductosListContainer = () => {
         const col = await getDocs(document)
         const result = col.docs.map((doc) => doc ={id:doc.id,...doc.data()})
         setProductos(result)
-        console.log(result)
         } catch (error) {
             console.log(error)
         }

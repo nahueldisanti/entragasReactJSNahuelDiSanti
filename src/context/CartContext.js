@@ -21,7 +21,6 @@ export const CartProvider = ({children}) => {
             setCarrito([...carrito, itemAgregar]);
 
         }
-        console.log(carrito)
     }
 
     const resetearCarrito = () => {

@@ -11,9 +11,13 @@ const ItemDetail = ({selectedItem}) => {
                     <img src= {selectedItem.img} alt={selectedItem.name}/>
                 </div>
                 <div className="card-detail-right">
-                    <p>{selectedItem.description}</p>
-                    <p>${selectedItem.price}</p>
-                    <Contador producto={selectedItem}/>
+                    <div className='texto'>
+                        <h2>{selectedItem.description}</h2>
+                        <p>${selectedItem.price}</p>
+                    </div>
+                    <div className='contador'>
+                        <Contador producto={selectedItem}/>
+                    </div>
                 </div>
                 <div>
                     
